@@ -1,0 +1,105 @@
+###CADASTRAR FUNCIONARIO
+POST http://localhost:3000/funcionario
+Content-Type: application/json
+
+{
+    "nome": "nome",
+    "email": "email",
+    "senha": "senha"
+}
+
+###LOGIN FUNCIONARIO
+# @name valToken
+POST http://localhost:3000/login
+Content-Type: application/json
+
+
+{
+    "email": "email",
+    "senha": "senha"
+}
+
+###CADASTRANDO OBRA
+POST http://localhost:3000/obra
+Content-Type: application/json
+Authorization: {{valToken.response.body.token}}
+
+{
+    "nome": "nome1",
+    "cnpj": "cnpj1"
+}
+
+###LISTAR OBRA
+GET http://localhost:3000/obras
+Content-Type: application/json
+Authorization: {{valToken.response.body.token}}
+
+###BUSCAR OBRA NOME
+GET http://localhost:3000/obra/nome/nome
+Content-Type: application/json
+Authorization: {{valToken.response.body.token}}
+
+###BUSCAR OBRA ID
+GET http://localhost:3000/obra/id/1
+Content-Type: application/json
+Authorization: {{valToken.response.body.token}}
+
+###BUSCAR OBRA ID
+PATCH  http://localhost:3000/obra/1
+Content-Type: application/json
+Authorization: {{valToken.response.body.token}}
+
+{
+    "nome": "nome2",
+    "cnpj": "cnpj2"
+}
+
+###APAGAR OBRA ID
+DELETE   http://localhost:3000/obra/3
+Content-Type: application/json
+Authorization: {{valToken.response.body.token}}
+
+
+###CADASTRANDO MATERIAL
+POST http://localhost:3000/material
+Content-Type: application/json
+Authorization: {{valToken.response.body.token}}
+
+{
+    "descricao": "descricao1",
+    "categoria": "ENTRADA",
+    "qtdEstoque": "1",
+    "lote": "lote",
+    "idObra": 1
+}
+
+###ATUALIZAR MATERIAL
+PATCH  http://localhost:3000/material/1
+Content-Type: application/json
+Authorization: {{valToken.response.body.token}}
+
+{
+    "descricao": "descricao1",
+    "categoria": "ENTRADA",
+    "qtdEstoque": 1,
+    "lote": "lote",
+    "idObra": 1
+}
+
+###CADASTRANDO MOVIMENTO
+POST http://localhost:3000/movimento
+Content-Type: application/json
+Authorization: {{valToken.response.body.token}}
+
+{
+    "descricao": "descricao1",
+    "estado": "ENTRADA",
+    "qtdMovimento": 1,
+    "data": "2009-07-08",
+    "idMaterial": 1
+}
+
+###LISTAR MOVIMENTO
+GET http://localhost:3000/movimentos
+Content-Type: application/json
+Authorization: {{valToken.response.body.token}}

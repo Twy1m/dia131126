@@ -1,0 +1,28 @@
+const conn = require('../db/conn')
+const { DataTypes } = require('sequelize')
+
+const Funcionario = conn.define('funcionario', {
+    codFuncionario: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    nome: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    senha: {
+        type: DataTypes.STRING,
+        allowNull: false
+    }
+}, {
+    tableName: 'funcionarios',
+    timestamps: false
+})
+
+
+module.exports = Funcionario
