@@ -74,7 +74,7 @@ Authorization: {{valToken.response.body.token}}
 }
 
 ###ATUALIZAR MATERIAL
-PATCH  http://localhost:3000/material/1
+PATCH  http://localhost:3000/material/2
 Content-Type: application/json
 Authorization: {{valToken.response.body.token}}
 

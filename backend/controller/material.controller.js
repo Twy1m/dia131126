@@ -1,4 +1,5 @@
 const Material = require('../models/Material')
+const Obra = require('../models/Obra')
 const CryptoJS = require('crypto-js')
 
 const cadastrar = async (req, res) => {
@@ -36,12 +37,19 @@ const atualizar = async (req, res) => {
     }
 
     try {
+        console.log(id)
+        console.log(idObra)
         let material = await Material.findByPk(id)
-
         if (!material) {
             return res.status(404).json({ message: 'Material não encontrada' })
         }
-        
+
+        let obra = await Obra.findByPk(idObra)
+        if (!obra) {
+            return res.status(404).json({ message: 'Obra não encontrada' })
+        }
+
+
         lote = CryptoJS.AES.encrypt(lote, "senha").toString()
 
         material.descricao = descricao
