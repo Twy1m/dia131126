@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../js/cadFuncionario.js" defer></script>
+	<link rel="stylesheet" href="../css/style.css">
+	<title>HomePage</title>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<a href="../index.html">Homepage</a>
+			<select onchange="window.location.href = this.value">
+				<option disabled selected>Funcionario</option>
+				<option value="./html/cadFuncionario.html">Cadastrar</option>
+			</select>
+
+			<select onchange="window.location.href = this.value">
+				<option disabled selected>Obra</option>
+				<option value="./cadObra.html">Cadastrar</option>
+				<option value="./lisObra.html">Listar</option>
+				<option value="./buscObra.html">Buscar</option>
+				<option value="./buscNomeObra.html">Buscarn Nome</option>
+				<option value="./atualObra.html">atualizar</option>
+				<option value="./apagObra.html">apagar</option>
+			</select>
+
+			<select onchange="window.location.href = this.value">
+				<option disabled selected>Material</option>
+				<option value="./cadMaterial.html">Cadastrar</option>
+				<option value="./atualMaterial.html">Atualziar</option>
+			</select>
+
+			<select onchange="window.location.href = this.value">
+				<option disabled selected>Movimentacao</option>
+				<option value="./cadMovimento.html">Cadastrar</option>
+				<option value="./listMovimento.html">Listar</option>
+			</select>
+
+			<hr>
+		</nav>
+	</header>
+	<main>
+		<input type="text" id="nome" placeholder="nome">
+		<input type="text" id="email" placeholder="email">
+		<input type="text" id="senha" placeholder="senha">
+
+		<button id="btn">Cadastrar</button>
+
+		<div id="res"></div>
+	</main>
+
+</body>
+
+</html>
